@@ -1,20 +1,24 @@
-
-    def is_prime(number):
-
-        if number <= 1:
-            return False
-        if number <= 3:
-            return True
-        if number % 2 == 0 or number % 3 == 0:
-            return False
-        i = 5
-        while i * i <= number:
-            if number % i == 0 or number % (i + 2) == 0:
-                return False
-            i += 6
-    num = int(input('введіть число для перевірки'))
-    result = is_prime(num)
-    if result:
-        print(f"{num} є простим числом.")
+def display_line(length, direction, symbol):
+    if direction == "horizontal":
+        print(symbol * length)
+    elif direction == "vertical":
+        for _ in range(length):
+            print(symbol)
     else:
-        print(f"{num} не є простим числом.")
+        print("Неправильний напрямок. Виберіть 'horizontal' або 'vertical'.")
+length_h = int(input('введіть довжину лінії'))
+length_v = int(input('введіть висоту лінії'))
+
+
+direction_v = "vertical"
+symbol_v = "#"
+display_line(length_v, direction_v, symbol_v)
+direction_h = "horizontal"
+symbol_h = "*"
+display_line(length_h, direction_h, symbol_h)
+
+
+
+
+
+
