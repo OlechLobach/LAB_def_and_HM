@@ -1,17 +1,15 @@
-while True:
-    def display_even_numbers():
-        try:
-            start = int(input("Введіть початкове число: "))
-            end = int(input("Введіть кінцеве число: "))
-
-            print(f"Парні числа між {start} і {end}:")
-            for num in range(start, end + 1):
-                if num % 2 == 0:
-                    print(num)
-        except ValueError:
-            print("Будь ласка, введіть правильні числа.")
-
-    display_even_numbers()
-    продовжити = input('чи бажаєте ввести інші числа? (так/ні)')
-    if продовжити.lower() !='так':
-        break
+def display_square(side_length, symbol, filled):
+    if filled:
+        for _ in range(side_length):
+            print(symbol * side_length)
+    else:
+        print(symbol * side_length)
+        for _ in range(side_length - 2):
+            print(symbol + " " * (side_length - 2) + symbol)
+        print(symbol * side_length)
+side_length = int(input("введіть число"))
+symbol = "*"
+filled = False
+display_square(side_length, symbol, filled)
+filled = True
+display_square(side_length, symbol, filled)
