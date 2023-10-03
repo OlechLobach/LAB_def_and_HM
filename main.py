@@ -1,13 +1,11 @@
-def find_min(num1, num2, num3, num4, num5):
-    min_value = min(num1, num2, num3, num4, num5)
-    return min_value
-
-# Приклад виклику функції з числами
-num1 = int(input('введіть перше число'))
-num2 = int(input('введіть друге число'))
-num3 = int(input('введіть третє число'))
-num4 = int(input('введіть четверте число'))
-num5 = int(input('введіть п`яте число'))
-
-min_number = find_min(num1, num2, num3, num4, num5)
-print(f"Мінімальне число: {min_number}")
+def calculate_product(start, end):
+    if start > end:
+        start, end = end, start
+    product = 1
+    for num in range(start, end + 1):
+        product *= num
+    return product
+start_num = int(input("введіть початкове число"))
+end_num = int(input("введіть кінцеве число"))
+result = calculate_product(start_num, end_num)
+print(f"Добуток чисел від {start_num} до {end_num} дорівнює {result}")
